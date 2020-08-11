@@ -1,5 +1,7 @@
 var express = require("express");
-var routes = require("./controllers/burgers_controller");
+var foodRoutes = require("./controllers/foods_controller");
+var movieRoutes = require("./controllers/movies_controller");
+var parkRoutes = require("./controllers/parks_controller");
 var app = express();
 
 PORT = process.env.PORT || 8080;
@@ -9,7 +11,10 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(routes);
+// This might need to be edited to be cleaner
+app.use(foodRoutes);
+app.use(movieRoutes);
+app.use(parkRoutes);
 // We can uncommoent this if we want to use handlebars
 // var exphbs = require("express-handlebars");
 
