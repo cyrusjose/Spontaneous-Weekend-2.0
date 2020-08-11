@@ -1,0 +1,20 @@
+{
+  "name": "spontaneous-weekend",
+  "version": "1.0.0",
+  "description": "allows the user to randomly create a weekend plan if they are unable to make one themselves",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melindawinter/Spontaneous-Weekend.git"
+  },
+  "author": "Melinda Winter, Kevin Cabe, Kate An, Cyrus Jose",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melindawinter/Spontaneous-Weekend/issues"
+  },
+  "homepage": "https://github.com/melindawinter/Spontaneous-Weekend#readme"
+}
