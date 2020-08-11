@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/melindawinter/Spontaneous-Weekend/issues"
   },
-  "homepage": "https://github.com/melindawinter/Spontaneous-Weekend#readme"
+  "homepage": "https://github.com/melindawinter/Spontaneous-Weekend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.4"
+  }
 }
