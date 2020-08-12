@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 // ############# code for using orm without sequlize below ################################
 
 // var connection = require("../config/connection.js");
@@ -18,14 +9,14 @@
 // // ["?", "?", "?"].toString() => "?,?,?";
 // function printQuestionMarks(num) {
 //     var arr = [];
-  
+
 //     for (var i = 0; i < num; i++) {
 //       arr.push("?");
 //     }
-  
+
 //     return arr.toString();
 //   }
-  
+
 // // Helper function to convert object key/value pairs to SQL syntax
 // function objToSql(ob) {
 //   var arr = [];
@@ -41,7 +32,7 @@
 //       }
 //       // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
 //       // e.g. {sleepy: true} => ["sleepy=true"]
-      
+
 //       arr.push(key + "=" + value);
 //     }
 //   }
@@ -49,7 +40,6 @@
 //   // translate array of strings to a single comma-separated string
 //   return arr.toString();
 // }
-
 
 // // Object for all our SQL statement functions.
 // var orm = {
@@ -64,21 +54,21 @@
 //     },
 //     insertOne: function(table, cols, vals, cb) {
 //       var queryString = "INSERT INTO " + table;
-  
+
 //       queryString += " (";
 //       queryString += cols.toString();
 //       queryString += ") ";
 //       queryString += "VALUES (";
 //       queryString += printQuestionMarks(vals.length);
 //       queryString += ") ";
-  
+
 //       console.log(queryString);
-  
+
 //       connection.query(queryString, vals, function(err, result) {
 //         if (err) {
 //           throw err;
 //         }
-  
+
 //         cb(result);
 //       });
 //     },
@@ -106,12 +96,12 @@
 //       queryString += condition;
 
 //       console.log(queryString);
-  
+
 //       connection.query(queryString, function(err, result) {
 //         if (err) {
 //           throw err;
 //         }
-  
+
 //         cb(result);
 //       });
 //     }

@@ -150,7 +150,7 @@ var movies = [
   "The Secret Life of Pets",
   "Pets 2",
   "Incredibles 2",
-  "Ralph Breaks The Internet"
+  "Ralph Breaks The Internet",
 ];
 
 $(document).ready(function () {
