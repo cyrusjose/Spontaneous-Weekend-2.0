@@ -1,0 +1,2 @@
+INSERT INTO t_parks (trail_name, trail_location, difficulty, distance, trail_URL)
+VALUES ("mount rubidoux drive", "Riverside, California", "greenBlue", 2.4, "https://www.hikingproject.com/trail/7011084/mount-rubidoux-drive");
