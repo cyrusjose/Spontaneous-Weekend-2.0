@@ -1,21 +1,19 @@
 // global variables
-var apikey = "eee323892b3fbbbde9d9b268625c3602";
-var randomBtn = $(".random-btn");
-var lattitude = "";
-var longitutde = "";
-var resName = $(".restaurant-name");
-var resPrice = $(".restaurant-price");
-var resAddress = $(".restaurant-address");
-var resCuisine = $(".restaurant-cuisine");
-var imgDiv = $(".imgDiv");
-var callBtn = $(".call-btn");
-var webBtn = $(".web-btn");
-var results = $(".results-container");
-var webLink = $(".webLink");
-var index = 0;
+const apikey = "eee323892b3fbbbde9d9b268625c3602";
+const randomBtn = $(".random-btn");
+const resName = $(".restaurant-name");
+const resPrice = $(".restaurant-price");
+const resAddress = $(".restaurant-address");
+const resCuisine = $(".restaurant-cuisine");
+const imgDiv = $(".imgDiv");
+const callBtn = $(".call-btn");
+const webBtn = $(".web-btn");
+const results = $(".results-container");
+const webLink = $(".webLink");
+let index = 0;
 
 // food stock photo arrays
-var foodArr = [
+const foodArr = [
   "https://tinyurl.com/yd3h2s4t",
   "https://tinyurl.com/yd8sug2v",
   "https://tinyurl.com/y7g82qfm",
@@ -32,10 +30,10 @@ var foodArr = [
   "https://tinyurl.com/y8nvt52u",
   "https://tinyurl.com/y89rmvp6",
   "https://tinyurl.com/y8x9uhjd",
-  "https://tinyurl.com/ydd6ujrk",
+  "https://tinyurl.com/ydd6ujrk"
 ];
 
-$(document).ready(function () {
+$(document).ready(() => {
   // hide buttons and results container
   callBtn.hide();
   webBtn.hide();
@@ -43,19 +41,19 @@ $(document).ready(function () {
 
   $(".sidenav").sidenav();
 
-  randomBtn.on("click", function () {
+  randomBtn.on("click", () => {
     // get current position of user
     navigator.geolocation.getCurrentPosition(successCallBack, errorCallBack);
   });
 });
 
 // ask user if we can get their location: Yes-> successCallBack, No -> errorCallBack
-const successCallBack = (position) => {
-  var lattitude = position.coords.latitude;
-  var longitude = position.coords.longitude;
+const successCallBack = position => {
+  const lattitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
 
   // put in necessary info in settings
-  var settings = {
+  const settings = {
     async: true,
     crossDomain: true,
     url:
@@ -66,8 +64,8 @@ const successCallBack = (position) => {
       "&sort=cost",
     method: "GET",
     headers: {
-      "user-key": "eee323892b3fbbbde9d9b268625c3602",
-    },
+      "user-key": apikey
+    }
   };
 
   // show buttons and results container
@@ -76,8 +74,8 @@ const successCallBack = (position) => {
   results.show();
 
   // grab restaurant info from zomato
-  $.getJSON(settings, function (data) {
-    var restaurants = data.restaurants.length;
+  $.getJSON(settings, data => {
+    const restaurants = data.restaurants.length;
 
     // randomize restaurant choice
     i = Math.floor(Math.random() * restaurants);
@@ -92,24 +90,24 @@ const successCallBack = (position) => {
 
     // append restaurant img
     index = Math.floor(Math.random() * foodArr.length);
-    var imgSrc = foodArr[index];
-    var image = $("<img>").attr("src", imgSrc);
+    const imgSrc = foodArr[index];
+    const image = $("<img>").attr("src", imgSrc);
     image.attr("class", "food-img");
     imgDiv.empty().append(image);
 
     // display restaurant web link
-    var link = data.restaurants[i].restaurant.url;
+    const link = data.restaurants[i].restaurant.url;
     webLink.attr("href", link);
     webLink.attr("target", "_blank");
 
     // display restaurant phone number
-    callBtn.click(function () {
+    callBtn.click(() => {
       callBtn.text(data.restaurants[i].restaurant.phone_numbers);
     });
   });
 };
 
 // if user does not allow browser to access location
-const errorCallBack = (error) => {
+const errorCallBack = error => {
   console.error(error);
 };
