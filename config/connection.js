@@ -1,5 +1,5 @@
-var mysql = require("mysql");
-var connection;
+const mysql = require("mysql");
+let connection;
 
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
@@ -9,12 +9,12 @@ if (process.env.JAWSDB_URL) {
     port: 3306,
     user: "root",
     password: null,
-    database: "activities_db",
+    database: "activities_db"
   });
 }
 
 // Make connection.
-connection.connect(function (err) {
+connection.connect(err => {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
