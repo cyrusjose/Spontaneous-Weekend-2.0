@@ -1,8 +1,8 @@
-var express = require("express");
-var foodRoutes = require("./controllers/foods_controller");
-var movieRoutes = require("./controllers/movies_controller");
-var parkRoutes = require("./controllers/parks_controller");
-var app = express();
+const express = require("express");
+const foodRoutes = require("./controllers/foods_controller");
+const movieRoutes = require("./controllers/movies_controller");
+const parkRoutes = require("./controllers/parks_controller");
+const app = express();
 
 PORT = process.env.PORT || 8080;
 
