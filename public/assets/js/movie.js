@@ -1,4 +1,4 @@
-var movies = [
+const movies = [
   "train to busan",
   "coraline",
   "moana",
@@ -150,18 +150,18 @@ var movies = [
   "The Secret Life of Pets",
   "Pets 2",
   "Incredibles 2",
-  "Ralph Breaks The Internet",
+  "Ralph Breaks The Internet"
 ];
 
-$(document).ready(function () {
+$(document).ready(() => {
   // Required for nav bar mobile functionality
   $(".sidenav").sidenav();
   //Required for carousel
-  $(document).ready(function () {
+  $(document).ready(() => {
     $(".carousel").carousel();
   });
 
-  $(".generateMovie").on("click", function (event) {
+  $(".generateMovie").on("click", event => {
     // Prevent default function
     event.preventDefault();
 
@@ -170,26 +170,26 @@ $(document).ready(function () {
     $(".generateMovie").text("Find Another Movie");
 
     //   Randomize movies
-    var movieIndex = Math.floor(Math.random() * movies.length);
+    const movieIndex = Math.floor(Math.random() * movies.length);
     //  URL for ajax call
-    var queryURL =
+    const queryURL =
       "https://www.omdbapi.com/?t=" + movies[movieIndex] + "&apikey=trilogy";
 
     //   Ajax call
     $.ajax({
       url: queryURL,
-      method: "GET",
-    }).then(function (response) {
+      method: "GET"
+    }).then(response => {
       // ON click the movie will be shown
 
       //   Create variables.
-      var posterImage = response.Poster;
-      var title = response.Title;
-      var synopsis = response.Plot;
-      var rating = response.Rated;
-      var runTime = response.Runtime;
-      var genre = response.Genre;
-      var releaseDate = response.Released;
+      const posterImage = response.Poster;
+      const title = response.Title;
+      const synopsis = response.Plot;
+      const rating = response.Rated;
+      const runTime = response.Runtime;
+      const genre = response.Genre;
+      const releaseDate = response.Released;
 
       //   Add attribute for poster.
       $(".poster").attr("src", posterImage);
