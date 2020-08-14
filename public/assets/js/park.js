@@ -1,21 +1,21 @@
 // function for mobile responsive side bar
-$(document).ready(function () {
+$(document).ready(() => {
   $(".sidenav").sidenav();
 
-  $(".genButton").on("click", function () {
+  $(".genButton").on("click", () => {
     // get current position of user
     navigator.geolocation.getCurrentPosition(successCallBack, errorCallBack);
   });
 });
 
-const successCallBack = (position) => {
-  var lat = position.coords.latitude;
-  var lon = position.coords.longitude;
+const successCallBack = position => {
+  const lat = position.coords.latitude;
+  const lon = position.coords.longitude;
 
-  var APIkey = "200806826-197a532cac60dc5762dd92c55ef817db";
-  var maxDistance = 10;
-  var maxResults = 20;
-  var APIurl =
+  const APIkey = "200806826-197a532cac60dc5762dd92c55ef817db";
+  const maxDistance = 10;
+  const maxResults = 20;
+  const APIurl =
     "https://www.hikingproject.com/data/get-trails?lat=" +
     lat +
     "&lon=" +
@@ -28,26 +28,26 @@ const successCallBack = (position) => {
     maxResults +
     "";
 
-  var settings = {
+  const settings = {
     url: APIurl,
-    method: "GET",
+    method: "GET"
   };
 
   $.ajax(settings)
-    .done(function (response) {
+    .done(response => {
       console.log(response);
       // get random trails index
-      var rand = Math.floor(Math.random() * response.trails.length);
+      const rand = Math.floor(Math.random() * response.trails.length);
       // create variable for found random trail
-      var foundTrail = response.trails[rand];
+      const foundTrail = response.trails[rand];
 
       //create variables for trial details
-      var trailName = foundTrail.name;
-      var trailLoc = foundTrail.location;
-      var traildifficulty = foundTrail.difficulty;
-      var traildistance = foundTrail.length;
-      var trailImage = foundTrail.imgSmall;
-      var trialLink = foundTrail.url;
+      const trailName = foundTrail.name;
+      const trailLoc = foundTrail.location;
+      const traildifficulty = foundTrail.difficulty;
+      const traildistance = foundTrail.length;
+      const trailImage = foundTrail.imgSmall;
+      const trialLink = foundTrail.url;
 
       //   Add class to main div
       $(".main").addClass("body-container");
@@ -68,11 +68,11 @@ const successCallBack = (position) => {
       $(".trail-distance").text(traildistance);
       $(".trail-link").attr("href", trialLink);
     })
-    .catch(function (err) {
+    .catch(err => {
       console.log(err);
     });
 };
 
-const errorCallBack = (error) => {
+const errorCallBack = error => {
   console.error(error);
 };
