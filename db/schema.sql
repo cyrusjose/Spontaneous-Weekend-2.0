@@ -1,3 +1,4 @@
+-- parks db and table
 CREATE DATABASE activities_db;
 
 use activities_db;
@@ -10,3 +11,19 @@ distance DECIMAL(5,2),
 trail_URL VARCHAR(255)
 );
 
+
+-- food db and table
+DROP DATABASE IF EXISTS food_db;
+
+CREATE DATABASE food_db;
+
+USE food_db;
+
+CREATE TABLE restaurants (
+  restaurant_id INT NOT NULL AUTO_INCREMENT,
+  restaurant_name varchar(60) NOT NULL,
+  cuisine VARCHAR(60),
+  price INT,
+  address VARCHAR(80),
+  PRIMARY KEY (restaurant_id)
+);
