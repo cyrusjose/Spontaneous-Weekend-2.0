@@ -2,7 +2,8 @@
 $(document).ready(() => {
   $(".sidenav").sidenav();
 
-  $(".genButton").on("click", () => {
+  $(".generate").on("click", event => {
+    event.stopPropagation();
     // get current position of user
     navigator.geolocation.getCurrentPosition(successCallBack, errorCallBack);
   });
