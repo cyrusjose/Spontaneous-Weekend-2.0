@@ -1,201 +1,220 @@
-const movies = [
-  "train to busan",
-  "coraline",
-  "moana",
-  "artemis fowl",
-  "knives out",
-  "the invisible man",
-  "Human Nature",
-  "Being John Malkovich",
-  "Eternal Sunshine of the Spotless Mind",
-  "High Life",
-  "Oh Brother, Where Art Thou?",
-  "Fargo",
-  "The Big Lebowski",
-  "Hail, Caesar!",
-  "Barton Fink",
-  "The Man Who Wasn’t There",
-  "Inside Llewyn Davis",
-  "Jawbreaker",
-  "Grandma’s Boy",
-  "Tristram Shandy: A Cock & Bull Story",
-  "Kung Fu Hustle",
-  "Hedwig and the Angry Inch",
-  "Robin Hood: Men in Tights",
-  "Wayne’s World",
-  "Shaun of the Dead",
-  "Hot Fuzz",
-  "World’s End",
-  "Scott Pilgrim vs. The World",
-  "Gosford Park",
-  "In Time",
-  "The Matrix",
-  "Jupiter Ascending",
-  "V for Vendetta",
-  "Blade Runner",
-  "Children of Men",
-  "Pan’s Labyrinth",
-  "Dark City",
-  "Vanilla Sky",
-  "Donnie Darko",
-  "The Princess Bride",
-  "The King’s Speech",
-  "Fight Club",
-  "Metropolitan",
-  "Kicking & Screaming",
-  "Love & Friendship",
-  "Better Luck Tomorrow",
-  "Out of Sight",
-  "A History of Violence",
-  "Twelfth Night (Trevor Nunn version)",
-  "Brick",
-  "Charlie’s Angels (2001)",
-  "Charlie’s Angel: Full Throttle",
-  "Paprika",
-  "Kiki’s Delivery Service",
-  "Princess Mononoke",
-  "My Neighbor Totoro",
-  "The Wind Rises",
-  "Ella Enchanted",
-  "The Iron Lady",
-  "Mary and the Witch Flower",
-  "House of 1000 Corpses",
-  "The Devil’s Rejects",
-  "The Shining",
-  "Black Swan",
-  "Saw",
-  "Call me by Your name",
-  "Tank Girl",
-  "The Rocky Horror Picture Show",
-  "Rent Les Miserables",
-  "A Dirty Shame",
-  "Pink Flamingos",
-  "Hair Spray",
-  "Bound",
-  "Prey for Rock & Roll",
-  "Jennifer’s Body",
-  "Sucker Punch",
-  "Velvet Goldmine",
-  "The Elephant Man",
-  "Blue Velvet",
-  "Wild at Heart",
-  "Twin Peaks: Fire Walk with Me",
-  "Lost Highway",
-  "Mulholland Drive",
-  "Inland Empire",
-  "1917",
-  "Little Women",
-  "Cats",
-  "Queen & Slim",
-  "Jumanji",
-  "Frozen",
-  "Doctor Sleep",
-  "Jojo Rabbit",
-  "Hunt for the Wilder People",
-  "Thor Ragnorak",
-  "Parasite",
-  "Terminator: Dark Fate",
-  "Black and Blue",
-  "Hustlers",
-  "It",
-  "The Farwell",
-  "Ready or Not",
-  "Dora and the Lost City of Gold",
-  "Yesterday",
-  "Midsommar",
-  "Hereditary",
-  "Late Night",
-  "The Favourite",
-  "The Lobster",
-  "Spider-Man: Into the Spider-Verse",
-  "Windows",
-  "Suspiria",
-  "The Hate U Give",
-  "A Simple Favor",
-  "The Wife",
-  "Searching",
-  "Crazy Rich Asians",
-  "Black KkKlansman",
-  "Sorry to Bother You",
-  "Mission Impossible",
-  "Mission Impossible 2",
-  "Mission Impossible 3",
-  "Mission Impossible: Ghost Protocol",
-  "Mission Impossible : Rogue Nation",
-  "Mission Impossible: Fallout",
-  "Okja",
-  "The Beguiled",
-  "Marie Antoinette",
-  "Lost in Translation",
-  "Lucy",
-  "Memento",
-  "Batman Begins",
-  "The Prestige",
-  "The Dark Knight",
-  "Inception",
-  "The Dark Knight Rises",
-  "Cosmopolis",
-  "Damsel",
-  "Young Adult",
-  "Snow White and the Huntsman",
-  "Dark Places",
-  "Gone Girl",
-  "Atomic Blonde",
-  "Miracle in Cell No.7",
-  "The Fault in Our Stars",
-  "The Devil Wears Prada",
-  "A Walk to Remember",
-  "Stand and Deliver",
-  "Joyful Noise",
-  "The Secret Life of Pets",
-  "Pets 2",
-  "Incredibles 2",
-  "Ralph Breaks The Internet"
-];
+// const movies = []
+
+// {
+//   "genres": [
+//     {
+//       "id": 28,
+//       "name": "Action"
+//     },
+//     {
+//       "id": 12,
+//       "name": "Adventure"
+//     },
+//     {
+//       "id": 16,
+//       "name": "Animation"
+//     },
+//     {
+//       "id": 35,
+//       "name": "Comedy"
+//     },
+//     {
+//       "id": 80,
+//       "name": "Crime"
+//     },
+//     {
+//       "id": 99,
+//       "name": "Documentary"
+//     },
+//     {
+//       "id": 18,
+//       "name": "Drama"
+//     },
+//     {
+//       "id": 10751,
+//       "name": "Family"
+//     },
+//     {
+//       "id": 14,
+//       "name": "Fantasy"
+//     },
+//     {
+//       "id": 36,
+//       "name": "History"
+//     },
+//     {
+//       "id": 27,
+//       "name": "Horror"
+//     },
+//     {
+//       "id": 10402,
+//       "name": "Music"
+//     },
+//     {
+//       "id": 9648,
+//       "name": "Mystery"
+//     },
+//     {
+//       "id": 10749,
+//       "name": "Romance"
+//     },
+//     {
+//       "id": 878,
+//       "name": "Science Fiction"
+//     },
+//     {
+//       "id": 10770,
+//       "name": "TV Movie"
+//     },
+//     {
+//       "id": 53,
+//       "name": "Thriller"
+//     },
+//     {
+//       "id": 10752,
+//       "name": "War"
+//     },
+//     {
+//       "id": 37,
+//       "name": "Western"
+//     }
+//   ]
+// }
+// Basic url
+//http://api.themoviedb.org/3/discover/movie?api_key=55e5e1d7ebed7a010f996dca966df720&language=en-US
 
 $(document).ready(() => {
   // Required for nav bar mobile functionality
   $(".sidenav").sidenav();
-  //Required for carousel
-  $(document).ready(() => {
-    $(".carousel").carousel();
-  });
+  let userGenreChoice = "";
 
-  $(".generateMovie").on("click", event => {
+  // Action button
+  $("#action").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "28";
+  });
+  // Adventure button
+  $("#adventure").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "12";
+  });
+  //Animation button
+  $("#animation").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "16";
+  });
+  //Comedy button
+  $("#comedy").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "35";
+  });
+  //Crime button
+  $("#crime").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "80";
+  });
+  //Documentary button
+  $("#documentary").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "99";
+  });
+  //Drama button
+  $("#drama").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "18";
+  });
+  //Family button
+  $("#family").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "10751";
+  });
+  //Fantasy button
+  $("#fantasy").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "14";
+  });
+  //Horror button
+  $("#horror").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "27";
+  });
+  //Music button
+  $("#music").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "10402";
+  });
+  //Mystery button
+  $("#mystery").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "9648";
+  });
+  //Romance button
+  $("#romance").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "10749";
+  });
+  //Science fiction button
+  $("#romance").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "878";
+  });
+  //Thriller button
+  $("#thriller").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "53";
+  });
+  //War button
+  $("#war").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "10752";
+  });
+  //Western button
+  $("#western").on("click", event => {
+    event.preventDefault();
+    userGenreChoice = "37";
+  });
+  $(document).on("click", ".generateMovie", event => {
     // Prevent default function
     event.preventDefault();
 
     $(".mainHeader").addClass("hide");
     $(".secondHeader").removeClass("hide");
-    $(".generateMovie").text("Find Another Movie");
 
-    //   Randomize movies
-    const movieIndex = Math.floor(Math.random() * movies.length);
+    // with_genres=18&sort_by=vote_average.desc&vote_count.gte=10
+    // const userGenreChoice = $(this).attr("data-value");
+    console.log(userGenreChoice);
     //  URL for ajax call
     const queryURL =
-      "https://www.omdbapi.com/?t=" + movies[movieIndex] + "&apikey=trilogy";
-
+      "http://api.themoviedb.org/3/discover/movie?with_genres=" +
+      userGenreChoice +
+      "&api_key=55e5e1d7ebed7a010f996dca966df720&language=en-US";
+    console.log(queryURL);
     //   Ajax call
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(response => {
       // ON click the movie will be shown
+      console.log(response);
+      const movieData = response.results;
 
+      const randomMovie =
+        movieData[Math.floor(Math.random() * movieData.length)];
+      console.log(randomMovie);
       //   Create variables.
-      const posterImage = response.Poster;
-      const title = response.Title;
-      const synopsis = response.Plot;
-      const rating = response.Rated;
-      const runTime = response.Runtime;
-      const genre = response.Genre;
-      const releaseDate = response.Released;
+      const posterImage = response.poster_path;
+      const title = response.original_title;
+      const synopsis = response.overview;
+      // const rating = response.Rated;
+      const runTime = response.runtime;
+      // const genre = response.genres.name;
+      const releaseDate = response.release_date;
 
       //   Add attribute for poster.
       $(".poster").attr("src", posterImage);
       //   Add class to main div
       $(".main").addClass("body-container");
-      //   Display content.
+      //   Display content
       $(".movieInfo").removeClass("hide");
       //   Show title
       $(".title").removeClass("hide");
@@ -205,11 +224,11 @@ $(document).ready(() => {
       //   Show release date
       $(".release").text(releaseDate);
       //   Show TV rating
-      $(".rating").text(rating);
-      //   Show Run Time
+      // $(".rating").text(rating);
+      // //   Show Run Time
       $(".runTime").text(runTime);
-      //   Show Genre
-      $(".genre").text(genre);
+      // //   Show Genre
+      // $(".genre").text(genre);
     });
   });
 });
