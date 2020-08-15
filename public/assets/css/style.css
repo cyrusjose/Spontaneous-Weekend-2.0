@@ -62,10 +62,6 @@ main {
   width: 10px;
   float: right;
 }
-.red {
-  color: red;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
 /* Styling for the header container */
 #header {
   background-color: #69a4a2;
