@@ -1,7 +1,12 @@
 
 .body-container,
-.container{
+.container,
+.row{
   border: 5px solid black
+}
+
+.row1, .row2, .row3{
+  height: 800px;
 }
 
 /* Styling for the body */
