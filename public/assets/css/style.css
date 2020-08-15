@@ -1,6 +1,6 @@
 /* Styling for the body */
 body {
-  background-color: #950952;
+  background-color: #296e6b;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -13,7 +13,7 @@ main {
 
 /* Styling for the navbar container */
 #nav-container {
-  background-color: #023618;
+  background-color: #2b4a4a;
 }
 
 /* Animation for the wheel */
@@ -32,13 +32,10 @@ main {
 /* Header */
 
 .active{
+  background-color: #2b4a4a;
   transition: 1s;
 }
 
-/* Creates a hover effect on the navbar menu options */
-.hover:hover {
-  color: white;
-}
 
 
 /* Situating the navbar */
@@ -60,7 +57,7 @@ main {
 
 /* Styling for the header container */
 #header {
-  background-color: #73b294;
+  background-color: #69a4a2;
   text-align: center;
   border-radius: 50px;
   padding: 25px;
@@ -81,7 +78,7 @@ main {
 
 /* Styling for the "neo" in spontaneous */
 #neo {
-  color: #5e0035;
+  color: #dae4e5;
 }
 
 /* Styling for the cards */
@@ -98,7 +95,7 @@ main {
 /* Creates a sticky footer */
 .footer {
   width: 100%;
-  background-color: #023618;
+  background-color: #2b4a4a;
   color: white;
   text-align: center;
   font-family: "Dancing Script", cursive;
