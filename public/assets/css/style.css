@@ -1,3 +1,9 @@
+
+.body-container,
+.container{
+  border: 5px solid black
+}
+
 /* Styling for the body */
 body {
   background-color: #296e6b;
