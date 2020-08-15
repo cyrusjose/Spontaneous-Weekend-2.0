@@ -29,6 +29,12 @@ main {
   }
 }
 
+/* Header */
+
+.active{
+  transition: 1s;
+}
+
 /* Creates a hover effect on the navbar menu options */
 .hover:hover {
   color: white;
