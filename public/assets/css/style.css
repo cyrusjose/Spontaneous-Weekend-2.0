@@ -1,3 +1,9 @@
+
+.body-container,
+.container{
+  border: 5px solid black
+}
+
 /* Styling for the body */
 body {
   background-color: #296e6b;
@@ -35,7 +41,7 @@ main {
 .web{
   background-color: #2b4a4a;
   /* height: 100px; */
-  transition: 1s;
+  transition: all 1.5s;
 }
 
 
