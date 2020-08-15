@@ -35,7 +35,7 @@ main {
 .web{
   background-color: #2b4a4a;
   /* height: 100px; */
-  transition: 1s;
+  transition: all 1.5s;
 }
 
 
