@@ -10,14 +10,7 @@ difficulty VARCHAR(255) NOT NULL,
 distance DECIMAL(5,2),
 trail_URL VARCHAR(255)
 );
-
-
--- food db and table
-DROP DATABASE IF EXISTS food_db;
-
-CREATE DATABASE food_db;
-
-USE food_db;
+-- restaurants table
 
 CREATE TABLE restaurants (
   restaurant_id INT NOT NULL AUTO_INCREMENT,
