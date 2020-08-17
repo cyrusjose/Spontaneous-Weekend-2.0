@@ -11,7 +11,7 @@
   height: 300px;
   width: 40%;
   top: 30%;
-  left: 55%;
+  left: 59.5%;
   background-color: #c5d7d9;
 
 }
@@ -153,14 +153,44 @@ main {
 /* Styling for the cards */
 .card {
   border-radius: 10px;
-  padding: 25px;
   box-shadow: 0 0 10px 4px;
 }
-
-.card-action {
-  text-align: center;
+em{
+  font-weight: 900;
 }
 
+/* .card-header {
+  text-align: center;
+  justify-content: center;
+  height: 20px
+} */
+.card-link-header{
+  height: 100%;
+  padding-top: 45px;
+  margin-top: 0;
+  color: black;
+}
+
+.card-link1,
+.card-link2,
+.card-link3{
+  background-color: #d8d3d0;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 10px 10px 0;
+}
+.card-link1{
+  height: 48%;
+}
+.card-link2{
+  height: 48.5%;
+}
+.card-link3{
+  height: 49.5%;
+}
+.card-link-header:hover{
+  color: #7dbbb9;
+}
 /* Creates a sticky footer */
 .footer {
   width: 100%;
