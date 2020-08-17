@@ -13,12 +13,12 @@
   background-color: #c5d7d9;
 }
 .card-even {
-  /* display: flex; */
   position: absolute;
   text-align: center;
   height: 300px;
   width: 40%;
   top: 30%;
+  left: 10px;
   background-color: #c5d7d9;
 }
 
