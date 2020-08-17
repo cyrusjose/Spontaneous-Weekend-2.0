@@ -1,31 +1,73 @@
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Gotham Rounded", sans-serif;
+} */
 /* .body-container,
 .container,
 .row {
   border: 5px solid black;
 } */
 
-.row1,
+/* .row1,
 .row2,
 .row3 {
-  height: 800px;
+  position: relative;
+  height: 900px;
+  margin: 0;
+} */
+
+.card-opacity {
+  position: absolute;
+  top: 0;
+  right: 100;
+  /* z-index: 100; */
+  opacity: 1;
+}
+.row1 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
 }
 
-.row1 {
+.row1::before {
   background-image: url("https://images.pexels.com/photos/65128/pexels-photo-65128.jpeg?cs=srgb&dl=pexels-pietro-jeng-65128.jpg&fm=jpg");
   background-size: cover;
+  background-color: rgba(105, 164, 162, 0.5);
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
+  position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  opacity: 0.5;
 }
+
 .row2 {
   background-image: url("https://images.pexels.com/photos/3756498/pexels-photo-3756498.jpeg?cs=srgb&dl=pexels-alexy-almond-3756498.jpg&fm=jpg");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 0.7;
 }
 .row3 {
   background-image: url("https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?cs=srgb&dl=pexels-eberhard-grossgasteiger-443446.jpg&fm=jpg");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 0.7;
 }
 
 /* Styling for the body */
 body {
-  background-color: #296e6b;
+  background-color: #7dbbb9;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
