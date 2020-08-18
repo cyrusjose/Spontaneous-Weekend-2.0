@@ -109,34 +109,69 @@ $(document).ready(() => {
       const randomMovie =
         movieData[Math.floor(Math.random() * movieData.length)];
       console.log(randomMovie);
-      //   Create variables.
-      const posterImage = randomMovie.poster_path;
-      const title = randomMovie.title;
-      const synopsis = randomMovie.overview;
-      // const rating = response.Rated;
-      // const runTime = randomMovie.runtime;
-      // const genre = randomMovie.genres.name;
-      const releaseDate = randomMovie.release_date;
+      console.log(randomMovie.id, "This is the movie's id");
 
-      //   Add attribute for poster.
-      $(".poster").attr("src", "https://image.tmdb.org/t/p/w500" + posterImage);
-      //   Add class to main div
-      $(".main").addClass("body-container");
-      //   Display content
-      $(".movieInfo").removeClass("hide");
-      //   Show title
-      $(".title").removeClass("hide");
-      $(".title").text(title);
-      //   Show description
-      $(".description").text(synopsis);
-      //   Show release date
-      $(".release").text(releaseDate);
-      //   Show TV rating
-      // $(".rating").text(rating);
-      // //   Show Run Time
-      // $(".runTime").text(runTime);
-      // //   Show Genre
-      // $(".genre").text(genre);
+      // Second ajax call for additional data
+      const queryMoreURL =
+        "https://api.themoviedb.org/3/movie/" +
+        randomMovie.id +
+        "?api_key=55e5e1d7ebed7a010f996dca966df720&language=en-US&append_to_response=release_dates";
+
+      $.ajax({
+        url: queryMoreURL,
+        method: "GET"
+      }).then(moreResponse => {
+        // ON click the movie will be shown
+        console.log(moreResponse);
+        // const moreData = moreResponse;
+        //   Create variables.
+        const posterImage = randomMovie.poster_path;
+        const title = randomMovie.title;
+        const synopsis = randomMovie.overview;
+        // const rating = moreData.;
+        const runTime = moreResponse.runtime;
+        // const genre = moreResponse.genres.name;
+        const releaseDate = randomMovie.release_date;
+        console.log(runTime, "run time of movie");
+        // eslint-disable-next-line prettier/prettier
+        const genreNames = [];
+        for (let i = 0; i < moreResponse.genres.length; i++) {
+          genreNames.push(moreResponse.genres[i].name);
+        }
+        console.log(genreNames, "Genre Names");
+        //   Add attribute for poster.
+        $(".poster").attr(
+          "src",
+          "https://image.tmdb.org/t/p/w500" + posterImage
+        );
+        //   Add class to main div
+        $(".main").addClass("body-container");
+        //   Display content
+        $(".movieInfo").removeClass("hide");
+        //   Show title
+        $(".title").removeClass("hide");
+        $(".title").text(title);
+        //   Show description
+        $(".description").text(synopsis);
+        //   Show release date
+        $(".release").text(releaseDate);
+        //   Show TV rating
+        // $(".rating").text(rating);
+        // //   Show Run Time
+        $(".runTime").text(runTime + " minutes");
+        //   Show Genres
+        const newHTML = [];
+        $.each(genreNames, (index, value) => {
+          newHTML.push("<span class='genre-span'>" + value + "</span>");
+        });
+        $(".genre").html(newHTML.join(""));
+        // const saveMovie = {
+        //   title: title
+        // };
+        // $("#favorite").on("click", saveMovie => {
+        // send to api route
+      });
     });
   });
 });
+// });
