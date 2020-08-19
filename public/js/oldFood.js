@@ -1,5 +1,5 @@
 // global variables
-const apikey = "d0db9928cbmshf912bd146991184p1e2686jsn614886281a85";
+const apikey = "eee323892b3fbbbde9d9b268625c3602";
 const randomBtn = $(".random-btn");
 const resName = $(".restaurant-name");
 const resPrice = $(".restaurant-price");
