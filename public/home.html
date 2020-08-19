@@ -30,7 +30,7 @@
     />
 
     <!-- Our CSS file -->
-    <link rel="stylesheet" href="public/assets/css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <!-- This is the title that appears in the browser tag -->
     <title>Spontaneous Weekend</title>
   </head>
@@ -43,7 +43,7 @@
       <div class="container">
         <!-- Buttons on navbar -->
         <a href="#!" class="brand-logo"
-          ><img class="rotate" src="views/images/wheel.png"
+          ><img class="rotate" src="./images/wheel.png"
         /></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger">
           <i class="material-icons">menu</i>
@@ -51,25 +51,25 @@
         <ul class="right hide-on-med-and-down">
           <!-- Home button, active page -->
           <li class="web1">
-            <a class="hover1" href="index.html"
+            <a class="hover1" href="./home.html"
               >Home <i class="fa fa-home" aria-hidden="true"></i
             ></a>
           </li>
           <!-- Film button -->
-          <li class = "web2">
-            <a class="hover2" href="views/layouts/movie.html"
+          <li class="web2">
+            <a class="hover2" href="./movie.html"
               >Watch <i class="fa fa-film" aria-hidden="true"></i
             ></a>
           </li>
           <!-- Food button -->
-          <li class = "web3">
-            <a class="hover3" href="views/layouts/food.html"
+          <li class="web3">
+            <a class="hover3" href="./food.html"
               >Eat <i class="fa fa-cutlery" aria-hidden="true"></i
             ></a>
           </li>
           <!-- Activity button -->
-          <li class = "web4">
-            <a class="hover4" href="views/layouts/park.html"
+          <li class="web4">
+            <a class="hover4" href="./park.html"
               >Do <i class="fa fa-bicycle" aria-hidden="true"></i
             ></a>
           </li>
@@ -81,25 +81,25 @@
     <ul class="sidenav" id="mobile-demo">
       <!-- Home button, active page -->
       <li class="active">
-        <a href="index.html"
+        <a href="./home.html"
           >|Home <i class="fa fa-home" aria-hidden="true"></i
         ></a>
       </li>
       <!-- Film button -->
       <li>
-        <a href="views/layouts/movie.html"
+        <a href="./movie.html"
           >Watch <i class="fa fa-film" aria-hidden="true"></i
         ></a>
       </li>
       <!-- Food button -->
       <li>
-        <a href="views/layouts/food.html"
+        <a href="./food.html"
           >Eat <i class="fa fa-cutlery" aria-hidden="true"></i
         ></a>
       </li>
       <!-- Activity button -->
       <li>
-        <a href="views/layouts/park.html"
+        <a href="./park.html"
           >Do <i class="fa fa-bicycle" aria-hidden="true"></i
         ></a>
       </li>
@@ -108,85 +108,90 @@
 
     <main>
       <!-- Begin header -->
-      <div class="container body-container" id="header">
-        <h3 class="header-text-title">
-          Sponta<span id="neo">neo</span>us Weekend
-        </h3>
-        <h5 class="header-text">
-          So you don't spend your weekend deciding.
-        </h5>
+      <div class="header">
+        <div class="header-content">
+          <h3 class="header-text-title">
+            Sponta<span id="neo">neo</span>us Weekend
+          </h3>
+          <h5 class="header-text">
+            So you don't spend your weekend deciding.
+          </h5>
+        </div>
       </div>
       <!-- End header -->
-      <div class = "container"></div>
 
       <!-- Begin image and link cards -->
-      <div class="container" id="cards">
-        <div class="row">
-          <!-- Movie card -->
-          <div class="col s12 m4">
-            <div class="card small">
-              <div class="card-image">
-                <img class="responsive-img" src="views/images/television.jpg" />
-              </div>
-              <div class="card-content">
-                <p>
-                  Let fate decide instead of endlessly scrolling.
-                </p>
-              </div>
-              <div class="card-action #424242 grey darken-4">
-                <a
-                  class="#fafafa grey-text text-lighten-5"
-                  href="views/layouts/movie.html"
-                  >Watch</a
-                >
-              </div>
+
+      <!-- Movie card -->
+      <div class="row row1">
+        <div class="col s10 m3">
+          <div class="card card-odd movie">
+            <div class="card-content">
+              <span class="card-title"><em>
+                Take a load off and watch a movie
+              </em></span>
+              <p>
+                Let us help you decide on a movie. 
+              </br>Follow the link below to try out our movie randomizer and discover a movie that you probably haven't heard of.
+              </p>
             </div>
-          </div>
-          <!-- Food card -->
-          <div class="col s12 m4">
-            <div class="card small">
-              <div class="card-image">
-                <img
-                  class="responsive-img"
-                  src="views/images/french-toast.jpg"
-                />
-              </div>
-              <div class="card-content">
-                <p>
-                  Surprise your taste buds with something new.
-                </p>
-              </div>
-              <div class="card-action #424242 grey darken-4">
-                <a
-                  class="#fafafa grey-text text-lighten-5"
-                  href="views/layouts/food.html"
-                  >Eat</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Activities card -->
-          <div class="col s12 m4">
-            <div class="card small">
-              <div class="card-image">
-                <img class="responsive-img" src="views/images/trail1.jpg" />
-              </div>
-              <div class="card-content">
-                <p>
-                  Venture outside of your usual places.
-                </p>
-              </div>
-              <div class="card-action #424242 grey darken-4">
-                <a
-                  class="#fafafa grey-text text-lighten-5"
-                  href="views/layouts/park.html"
-                  >Do</a
-                >
-              </div>
+            <div class = "card-link1">
+              <a href="./movie.html">
+                <h2 class="card-link-header">
+                  Movies
+                </h2>
+              </a>
             </div>
           </div>
         </div>
       </div>
+      <!-- Food card -->
+      <div class="row row2">
+        <div class="col s12 m6">
+          <div class="card card-even food">
+            <div class="card-content">
+              <span class="card-title"><em>
+                Dare to try new cuisines?
+              </em></span>
+              <p>
+                Can't decide what to eat? 
+              </br>Follow the link below to try out our restaurant randomizer and discover a dining place that you probably haven't tried.
+              </p>
+            </div>
+            <div class = "card-link2">
+              <a href="./food.html">
+                <h2 class="card-link-header">
+                  Restaurants
+                </h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Activities card -->
+      <div class="row row3">
+        <div class="col s12 m6">
+          <div class="card card-odd trail">
+            <div class="card-content">
+              <span class="card-title"><em>
+                Explore new heights.
+              </em></span>
+              <p>
+                Maybe you're up for a little (or massive)  hike?
+              </br>Follow the link below to try out our trail randomizer and discover a a new hike that you probably haven't trekked.
+              </p>
+            </div>
+            <div class = "card-link3">
+              <a href="./park.html">
+                <h2 class="card-link-header">
+                  Trails
+                </h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- End cards -->
     </main>
     <!-- Begin footer -->
@@ -209,6 +214,6 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="public/assets/js/index.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

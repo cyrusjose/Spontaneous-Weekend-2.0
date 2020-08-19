@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Outdoors</title>
+    <title>Movies</title>
     <!--Import Google Icon Font-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -28,29 +28,29 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
 
-    <link rel="stylesheet" href="../../public/assets/css/park.css" />
+    <link rel="stylesheet" href="./css/movie.css" />
     <!-- JS deferred -->
-    <script src="../../public/assets/js/park.js" defer></script>
+    <script src="./js/movie.js" defer></script>
   </head>
   <body>
     <!-- Begin navbar -->
     <nav class="nav-wrapper" id="nav-container">
       <div class="container">
-        <a href="../../index.html" class="brand-logo"
-          ><img class="rotate" src="../style/images/wheel.png"
-        /></a>
+        <a href="./home.html" class="brand-logo">
+          <img class="rotate" src="./images/wheel.png" />
+        </a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger">
           <i class="material-icons">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
           <li>
-            <a class="hover" href="../../index.html"
+            <a class="hover" href="./home.html"
               >Home <i class="fa fa-home" aria-hidden="true"></i
             ></a>
           </li>
-          <li>
-            <a class="hover" href="movie.html"
-              >Watch <i class="fa fa-film" aria-hidden="true"></i
+          <li class="active">
+            <a class="hover" href="./movie.html"
+              >|Watch <i class="fa fa-film" aria-hidden="true"></i
             ></a>
           </li>
           <li>
@@ -58,9 +58,9 @@
               >Eat <i class="fa fa-cutlery" aria-hidden="true"></i
             ></a>
           </li>
-          <li class="active">
+          <li>
             <a class="hover" href="park.html"
-              >|Do <i class="fa fa-bicycle" aria-hidden="true"></i
+              >Do <i class="fa fa-bicycle" aria-hidden="true"></i
             ></a>
           </li>
         </ul>
@@ -72,17 +72,17 @@
           >Home <i class="fa fa-home" aria-hidden="true"></i
         ></a>
       </li>
-      <li>
-        <a href="#">Watch <i class="fa fa-film" aria-hidden="true"></i></a>
+      <li class="active">
+        <a href="#">|Watch <i class="fa fa-film" aria-hidden="true"></i></a>
       </li>
       <li>
         <a href="food.html"
           >Eat <i class="fa fa-cutlery" aria-hidden="true"></i
         ></a>
       </li>
-      <li class="active">
+      <li>
         <a href="park.html"
-          >|Do <i class="fa fa-bicycle" aria-hidden="true"></i
+          >Do <i class="fa fa-bicycle" aria-hidden="true"></i
         ></a>
       </li>
     </ul>
@@ -91,46 +91,66 @@
     <!-- Begin Body -->
     <main>
       <div class="genButton">
-        <h1 class="mainHeader">Take A Hike!</h1>
+        <h1 class="mainHeader">Pick a Genre!</h1>
         <h2 class="secondHeader hide">Don't like the movie? Try another!</h2>
       </div>
       <div class="genButton">
-        <button class="generate">Find Trail Near You</button>
+        <!-- <button class="generateMovie">Find A Movie</button> -->
+        <button class="generateMovie" id="action">
+          Action
+        </button>
+        <button class="generateMovie" id="adventure">Adventure</button>
+        <button class="generateMovie" id="animation">Animation</button>
+        <button class="generateMovie" id="comedy">Comedy</button>
+        <button class="generateMovie" id="crime">Crime</button>
+        <button class="generateMovie" id="documentary">Documentary</button>
+        <button class="generateMovie" id="drama">Drama</button>
+        <button class="generateMovie" id="family">Family</button>
+        <button class="generateMovie" id="fantasy">Fantasy</button>
+        <button class="generateMovie" id="horror">Horror</button>
+        <button class="generateMovie" id="music">Music</button>
+        <button class="generateMovie" id="mystery">Mystery</button>
+        <button class="generateMovie" id="science fiction">
+          Science Fiction
+        </button>
+        <button class="generateMovie" id="thriller">Thriller</button>
+        <button class="generateMovie" id="war">War</button>
+        <button class="generateMovie" id="western">Western</button>
       </div>
 
       <div class="main row">
         <div class="col s12 m12 l12 xl12">
           <h5 class="title center-align hide"></h5>
           <div class="genButton">
-            <img class="trail-img" />
+            <img class="poster" />
           </div>
           <br />
           <div class="genButton">
-            <div class="info-area hide">
+            <div class="movieInfo hide">
               <ul>
                 <li>
-                  <button>favorite</button>
-                </li>
-                <br/>
-                <li>
-                  <h6 class="info">Location</h6>
-                  <span class="trail-location"></span>
+                  <h6 class="info">Plot</h6>
+                  <span class="description"></span>
                 </li>
                 <br />
                 <li>
-                  <h6 class="info">Difficulty</h6>
-                  <span class="trail-difficulty"></span>
+                  <h6 class="info">Release Date</h6>
+                  <span class="release"></span>
+                </li>
+                <br />
+                <!-- <li>
+                  <h6 class="info">Film Rating</h6>
+                  <span class="rating"></span>
+                </li>
+                <br /> -->
+                <li>
+                  <h6 class="info">Run Time</h6>
+                  <span class="runTime"></span>
                 </li>
                 <br />
                 <li>
-                  <h6 class="info">Distance</h6>
-                  <span class="trail-distance"></span>
-                </li>
-                <br />
-                <li>
-                  <a href="#" class="trail-link" id="link"
-                    >Click Here For More Info</a
-                  >
+                  <h6 class="info">Genres</h6>
+                  <span class="genre"></span>
                 </li>
               </ul>
             </div>
