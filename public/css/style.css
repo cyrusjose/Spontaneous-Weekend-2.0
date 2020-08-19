@@ -91,10 +91,9 @@ main {
 
 /* Header */
 
-.active,
-.web {
-  background-color: #2b4a4a;
-  transition: all 1.5s;
+.active {
+  color: #7dbbb9;
+  transition: all 0.5s;
 }
 
 /* Situating the navbar */
