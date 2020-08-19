@@ -31,7 +31,7 @@
   margin: 0;
 }
 .row1 {
-  background-image: url("/views/images/IMG_0026.jpeg");
+  background-image: url("../images/IMG_0026.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -40,7 +40,7 @@
 }
 
 .row2 {
-  background-image: url("/views/images/IMG_0025.jpeg");
+  background-image: url("../images/IMG_0025.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -48,7 +48,7 @@
   position: relative;
 }
 .row3 {
-  background-image: url("/views/images/IMG_0024.jpeg");
+  background-image: url("../images/IMG_0024.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -116,7 +116,7 @@ main {
 /* Styling for the header container */
 .header {
   height: 900px;
-  background-image: url("/views/images/IMG_0027.jpeg");
+  background-image: url("../images/IMG_0027.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
