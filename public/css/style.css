@@ -93,7 +93,7 @@ main {
 
 .active {
   color: #7dbbb9;
-  transition: all 0.5s;
+  transition: all 1s;
 }
 
 /* Situating the navbar */
