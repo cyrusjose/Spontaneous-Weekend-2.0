@@ -11,7 +11,7 @@ router.get("/park", (req, res) => {
   res.sendFile(path.join(__dirname, "../views/park.html"));
 });
 router.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../index.js"));
+  res.sendFile(path.join(__dirname, "../index.html"));
 });
 
 module.exports = router;
