@@ -1,114 +1,36 @@
-var mysql = require('mysql');
-var express = require('express');
-var session = require('express-session');
-var bodyParser = require('body-parser');
-var path = require('path');
+// Requiring necessary npm packages
+const express = require("express");
+const session = require("express-session");
+// Requiring passport as we've configured it
+const passport = require("./config/passport");
 
-var connection = mysql.createConnection({
-	host     : 'localhost',
-	user     : 'root',
-	password : 'compareString10',
-	database : 'activities_db'
+// Setting up port and requiring models for syncing
+const PORT = process.env.PORT || 8080;
+const db = require("./models");
+
+// Creating express app and configuring middleware needed for authentication
+const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
+// We need to use sessions to keep track of our user's login status
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
+
+// Syncing our database and logging a message to the user upon success
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
 });
-
-
-var app = express();
-
-
-app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true
-}));
-app.use(bodyParser.urlencoded({extended : true}));
-app.use(bodyParser.json());
-
-
-app.get('/', function(request, response) {
-	response.sendFile(path.join(__dirname + '/views/layouts/login.html'));
-});
-
-app.post('/auth', function(request, response) {
-	var username = request.body.username;
-	var password = request.body.password;
-	if (username && password) {
-		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
-			if (results.length > 0) {
-				request.session.loggedin = true;
-				request.session.username = username;
-				response.redirect('/home');
-			} else {
-				response.send('Incorrect Username and/or Password!');
-			}			
-			response.end();
-		});
-	} else {
-		response.send('Please enter Username and Password!');
-		response.end();
-	}
-});
-
-app.get('/home', function(request, response) {
-	if (request.session.loggedin) {
-		response.send('Welcome back, ' + request.session.username + '!');
-	} else {
-		response.send('Please login to view this page!');
-	}
-	response.end();
-});
-
-
-app.listen(3000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const express = require("express");
-// const foodRoutes = require("./controllers/foods_controller");
-// const movieRoutes = require("./controllers/movies_controller");
-// const parkRoutes = require("./controllers/parks_controller");
-// const app = express();
-
-// PORT = process.env.PORT || 8080;
-
-// app.use(express.static("public"));
-
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
-
-// // This might need to be edited to be cleaner
-// app.use(foodRoutes);
-// app.use(movieRoutes);
-// app.use(parkRoutes);
-// // We can uncommoent this if we want to use handlebars
-// // var exphbs = require("express-handlebars");
-
-// // app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-// // app.set("view engine", "handlebars");
-
-// app.listen(PORT, () => {
-//   console.log(`Server listening on: http://localhost:${PORT}`);
-// });
