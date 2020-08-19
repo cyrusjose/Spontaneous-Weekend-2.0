@@ -11,27 +11,9 @@ const webBtn = $(".web-btn");
 const results = $(".results-container");
 const webLink = $(".webLink");
 let index = 0;
+let cityName;
+let locationId;
 
-// food stock photo arrays
-const foodArr = [
-  "https://tinyurl.com/yd3h2s4t",
-  "https://tinyurl.com/yd8sug2v",
-  "https://tinyurl.com/y7g82qfm",
-  "https://tinyurl.com/ybmafd4l",
-  "https://tinyurl.com/ycuq66uz",
-  "https://tinyurl.com/yb2r7953",
-  "https://tinyurl.com/yawq2sxu",
-  "https://tinyurl.com/y7j2l762",
-  "https://tinyurl.com/ycjluapb",
-  "https://tinyurl.com/y7n6qllo",
-  "https://tinyurl.com/y8eph3n6",
-  "https://tinyurl.com/y92apn2p",
-  "https://tinyurl.com/ybb4e57c",
-  "https://tinyurl.com/y8nvt52u",
-  "https://tinyurl.com/y89rmvp6",
-  "https://tinyurl.com/y8x9uhjd",
-  "https://tinyurl.com/ydd6ujrk"
-];
 
 $(document).ready(() => {
   // hide buttons and results container
@@ -75,25 +57,50 @@ $(document).ready(() => {
 });
 
 // ask user if we can get their location: Yes-> successCallBack, No -> errorCallBack
+// ask user for city name
 const successCallBack = position => {
   const lattitude = position.coords.latitude;
   const longitude = position.coords.longitude;
 
+const settings1 = {
+  "async": true,
+	"crossDomain": true,
+	"url": "https://worldwide-restaurants.p.rapidapi.com/typeahead",
+	"method": "POST",
+	"headers": {
+		"x-rapidapi-host": "worldwide-restaurants.p.rapidapi.com",
+		"x-rapidapi-key": "d0db9928cbmshf912bd146991184p1e2686jsn614886281a85",
+		"content-type": "application/x-www-form-urlencoded"
+	},
+	"data": {
+		"language": "en_US",
+		"q": "Irvine"
+	}
+}
+
   // put in necessary info in settings
-  const settings = {
-    async: true,
-    crossDomain: true,
-    url:
-      "https://developers.zomato.com/api/v2.1/search?lat=" +
-      lattitude +
-      "&lon=" +
-      longitude +
-      "&sort=cost",
-    method: "GET",
-    headers: {
-      "user-key": apikey
+  const settings2 = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://worldwide-restaurants.p.rapidapi.com/search",
+    "method": "POST",
+    "headers": {
+      "x-rapidapi-host": "worldwide-restaurants.p.rapidapi.com",
+      "x-rapidapi-key": "d0db9928cbmshf912bd146991184p1e2686jsn614886281a85",
+      "content-type": "application/x-www-form-urlencoded"
+    },
+    "data": {
+      "limit": "30",
+      "language": "en_US",
+      "location_id": "297704",
+      "currency": "USD"
     }
   };
+
+  //get typehead result back and get location id
+  $.getJSON(settings1, data1 => {
+    console.log(data1);
+  })
 
   // show buttons and results container
   callBtn.show();
@@ -101,19 +108,19 @@ const successCallBack = position => {
   results.show();
 
   // grab restaurant info from zomato
-  $.getJSON(settings, data => {
-    const restaurants = data.restaurants.length;
+  $.getJSON(settings2, data2 => {
+    const restaurants = data2.restaurants.length;
 
     // randomize restaurant choice
     i = Math.floor(Math.random() * restaurants);
 
     // display restaurant info
-    resName.text(data.restaurants[i].restaurant.name);
+    resName.text(data2.restaurants[i].restaurant.name);
     resAddress.text(
-      "Address: " + data.restaurants[i].restaurant.location.address
+      "Address: " + data2.restaurants[i].restaurant.location.address
     );
-    resPrice.text("Price range: " + data.restaurants[i].restaurant.price_range);
-    resCuisine.text("Cuisine: " + data.restaurants[i].restaurant.cuisines);
+    resPrice.text("Price range: " + data2.restaurants[i].restaurant.price_range);
+    resCuisine.text("Cuisine: " + data2.restaurants[i].restaurant.cuisines);
 
     // append restaurant img
     index = Math.floor(Math.random() * foodArr.length);
@@ -123,13 +130,13 @@ const successCallBack = position => {
     imgDiv.empty().append(image);
 
     // display restaurant web link
-    const link = data.restaurants[i].restaurant.url;
+    const link = data2.restaurants[i].restaurant.url;
     webLink.attr("href", link);
     webLink.attr("target", "_blank");
 
     // display restaurant phone number
     callBtn.click(() => {
-      callBtn.text(data.restaurants[i].restaurant.phone_numbers);
+      callBtn.text(data2.restaurants[i].restaurant.phone_numbers);
     });
   });
 };
