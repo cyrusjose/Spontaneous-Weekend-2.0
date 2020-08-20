@@ -157,7 +157,7 @@ $(document).ready(() => {
         // const rating = moreData.;
         const runTime = moreResponse.runtime;
         // const genre = moreResponse.genres.name;
-        const releaseDate = randomMovie.release_date;
+        const release = randomMovie.release_date;
         console.log(runTime, "run time of movie");
         // eslint-disable-next-line prettier/prettier
         const genreNames = [];
@@ -181,7 +181,7 @@ $(document).ready(() => {
         //   Show description
         $(".description").text(synopsis);
         //   Show release date
-        $(".release").text(releaseDate);
+        $(".release").text(release);
         //   Show TV rating
         // $(".rating").text(rating);
         // //   Show Run Time
@@ -198,8 +198,48 @@ $(document).ready(() => {
         // date: releaseDate,
         // homepage: homepage
         // };
-        // $("#favorite").on("click", saveMovie => {
+        // $("#favorite").on("click", favMovie => {
         // send to api route
+
+        // When user clicks favorite button
+        // $("#chirp-submit").on("click", function(event) {
+        //   event.preventDefault();
+
+        //   // Make a newChirp object
+        //   var newChirp = {
+        //     author: $("#author")
+        //       .val()
+        //       .trim(),
+        //     body: $("#chirp-box")
+        //       .val()
+        //       .trim(),
+        //     created_at: moment().format("YYYY-MM-DD HH:mm:ss")
+        //   };
+
+        //   console.log(newChirp);
+
+        //   // Send an AJAX POST-request with jQuery
+        //   $.post("/api/new", newChirp)
+        //     // On success, run the following code
+        //     .then(function() {
+        //       var row = $("<div>");
+        //       row.addClass("chirp");
+
+        //       row.append("<p>" + newChirp.author + " chirped: </p>");
+        //       row.append("<p>" + newChirp.body + "</p>");
+        //       row.append(
+        //         "<p>At " +
+        //           moment(newChirp.created_at).format("h:mma on dddd") +
+        //           "</p>"
+        //       );
+
+        //       $("#chirp-area").prepend(row);
+        //     });
+
+        //   // Empty each input box by replacing the value with an empty string
+        //   $("#author").val("");
+        //   $("#chirp-box").val("");
+        // });
       });
     });
   });
