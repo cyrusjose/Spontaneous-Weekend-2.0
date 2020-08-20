@@ -165,6 +165,7 @@ $(document).ready(() => {
           genreNames.push(moreResponse.genres[i].name);
         }
         console.log(genreNames, "Genre Names");
+        const homepage = moreResponse.homepage;
         //   Add attribute for poster.
         $(".poster").attr(
           "src",
@@ -191,8 +192,11 @@ $(document).ready(() => {
           newHTML.push("<span class='genre-span'>" + value + "</span>");
         });
         $(".genre").html(newHTML.join(""));
-        // const saveMovie = {
-        //   title: title
+        $(".homepage").attr("href", homepage);
+        // const favMovie = {
+        //   title: title,
+        // date: releaseDate,
+        // homepage: homepage
         // };
         // $("#favorite").on("click", saveMovie => {
         // send to api route
