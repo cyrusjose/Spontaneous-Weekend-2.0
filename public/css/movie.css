@@ -12,12 +12,6 @@
   padding: 50px;
   margin: auto;
 }
-
-.genre{
-  left: 25%;
-  justify-content: center;
-  width: 50%;
-}
 .generateMovie,
 .poster {
   display: flex;

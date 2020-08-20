@@ -1,7 +1,6 @@
 $(document).ready(() => {
   // Required for nav bar mobile functionality
   $(".sidenav").sidenav();
-  $("select").formSelect();
   const hoverFunction = () => {
     $(".hover1").mouseover(() => {
       $(".hover1").addClass("active");
@@ -28,7 +27,6 @@ $(document).ready(() => {
       $(".hover4").removeClass("active");
     });
   };
-
   let userGenreChoice = "";
 
   // Action button
