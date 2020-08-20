@@ -13,6 +13,23 @@
 .results-container {
   text-align: center;
 }
+/* Change in color so that text is easier to see */
+.inquisition,
+.restaurant-name,
+.restaurant-address,
+.restaurant-cuisine,
+.restaurant-price {
+  color: #c5d7d9;
+}
+
+main {
+  background-image: url("../images/IMG_0029.jpeg");
+  /* height: 2000px; */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 h4 {
   text-align: center;
