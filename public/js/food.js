@@ -59,8 +59,8 @@ $(document).ready(() => {
 // ask user if we can get their location: Yes-> successCallBack, No -> errorCallBack
 // ask user for city name
 const successCallBack = position => {
-  const lattitude = position.coords.latitude;
-  const longitude = position.coords.longitude;
+  // const lattitude = position.coords.latitude;
+  // const longitude = position.coords.longitude;
 
 const settings1 = {
   "async": true,
@@ -97,10 +97,17 @@ const settings1 = {
     }
   };
 
-  //get typehead result back and get location id
+  // get typehead result back and get location id
   $.getJSON(settings1, data1 => {
     console.log(data1);
-  })
+  });
+
+  $.ajax(settings1).done(function (response) {
+    console.log(response);
+  });
+
+
+
 
   // show buttons and results container
   callBtn.show();
@@ -144,4 +151,4 @@ const settings1 = {
 // if user does not allow browser to access location
 const errorCallBack = error => {
   console.error(error);
-};
+}
