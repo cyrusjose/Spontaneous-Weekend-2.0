@@ -29,4 +29,8 @@ $(document).ready(() => {
     });
   };
   hoverFunction();
+  // GET request to figure out which user is logged in
+  $.get("/api/user_data").then(function(data) {
+    $(".member-name").text(data.email);
+  });
 });
