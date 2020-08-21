@@ -30,6 +30,11 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.apiContent{
+  background-color: #c5d7d9 ;
+  width: 50%;
+  justify-content: center;
+}
 
 h4 {
   text-align: center;
