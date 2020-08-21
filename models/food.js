@@ -1,17 +1,20 @@
-const Sequelize = require("sequelize");
-
-const sequelize = require("../config/config.json");
-
 // Creates a "Restaurant" model that matches up with DB
-const Restaurant = sequelize.define("restaurant", {
-  restaurant_name: Sequelize.STRING,
-  cuisine: Sequelize.STRING,
-  price: Sequelize.NUMBER,
-  address: Sequelize.STRING
-});
+module.exports = function(sequelize, DataTypes) {
+  const Restaurant = sequelize.define("restaurant", {
+    restaurant_name: DataTypes.STRING,
+    cuisine: DataTypes.STRING,
+    price: DataTypes.NUMBER,
+    address: DataTypes.STRING
+  });
 
-// Syncs with DB
-Restaurant.sync();
-
-// Makes the Restaurant Model available for other files (will also create a table)
-module.exports = Restaurant;
+  Restaurant.associate = function(models) {
+    // We're saying that a movie favorite should belong to a user
+    Restaurant.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+  console.log(Restaurant);
+  return Restaurant;
+};
