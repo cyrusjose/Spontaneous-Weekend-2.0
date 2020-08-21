@@ -142,6 +142,83 @@ $(document).ready(() => {
                       "https://api.themoviedb.org/3/movie/" +
                       randomMovie.id +
                       "?api_key=55e5e1d7ebed7a010f996dca966df720&language=en-US&append_to_response=release_dates";
+      $.ajax({
+        url: queryMoreURL,
+        method: "GET"
+      }).then(moreResponse => {
+        // ON click the movie will be shown
+        console.log(moreResponse);
+        // const moreData = moreResponse;
+        //   Create variables.
+        const posterImage = randomMovie.poster_path;
+        const title = randomMovie.title;
+        const synopsis = randomMovie.overview;
+        // const rating = moreData.;
+        const runTime = moreResponse.runtime;
+        // const genre = moreResponse.genres.name;
+        const release = randomMovie.release_date;
+        console.log(runTime, "run time of movie");
+        // eslint-disable-next-line prettier/prettier
+        const genreNames = [];
+        for (let i = 0; i < moreResponse.genres.length; i++) {
+          genreNames.push(moreResponse.genres[i].name);
+        }
+        console.log(genreNames, "Genre Names");
+        const homepage = moreResponse.homepage;
+        //   Add attribute for poster.
+        $(".poster").attr(
+          "src",
+          "https://image.tmdb.org/t/p/w500" + posterImage
+        );
+        //   Add class to main div
+        $(".main").addClass("body-container");
+        //   Display content
+        $(".movieInfo").removeClass("hide");
+        //   Show title
+        $(".title").removeClass("hide");
+        $(".title").text(title);
+        //   Show description
+        $(".description").text(synopsis);
+        //   Show release date
+        $(".release").text(release);
+        //   Show TV rating
+        // $(".rating").text(rating);
+        // //   Show Run Time
+        $(".runTime").text(runTime + " minutes");
+        //   Show Genres
+        const newHTML = [];
+        $.each(genreNames, (index, value) => {
+          newHTML.push("<span class='genre-span'>" + value + "</span>");
+        });
+        $(".genre").html(newHTML.join(""));
+        $(".homepage").attr("href", homepage);
+        // const favMovie = {
+        //   title: title,
+        // date: releaseDate,
+        // homepage: homepage
+        // };
+        // $("#favorite").on("click", favMovie => {
+        // send to api route
+        $(".favoriteButton").on("click", () => {
+          const faveMovie = {
+            title: title,
+            // date: release,
+            homepage: homepage
+          };
+          // $.ajax({
+          //   url: "/favorites",
+          //   method: "POST",
+          //   data: faveMovie
+          // }).then(data => {
+          //   console.log(data);
+          // });
+          $.post("/favorites", faveMovie).then(data => {
+            console.log(data);
+          });
+        });
+        // When user clicks favorite button
+        // $("#chirp-submit").on("click", function(event) {
+        //   event.preventDefault();
 
                   $.ajax({
                       url: queryMoreURL,

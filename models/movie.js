@@ -1,10 +1,8 @@
-const { Sequelize } = require("sequelize/types");
-
-module.exports = function(sequelize) {
+module.exports = function(sequelize, DataTypes) {
   const Movie = sequelize.define("Movie", {
-    title: Sequelize.STRING,
-    release: Sequelize.STRING,
-    homepage: Sequelize.STRING
+    title: DataTypes.STRING,
+    release: DataTypes.STRING,
+    homepage: DataTypes.STRING
   });
 
   Movie.associate = function(models) {
