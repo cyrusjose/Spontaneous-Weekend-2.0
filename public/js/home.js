@@ -27,6 +27,18 @@ $(document).ready(() => {
     $(".hover4").mouseout(() => {
       $(".hover4").removeClass("active");
     });
+    $(".hover5").mouseover(() => {
+      $(".hover5").addClass("active");
+    });
+    $(".hover5").mouseout(() => {
+      $(".hover5").removeClass("active");
+    });
+    $(".hover6").mouseover(() => {
+      $(".hover6").addClass("active");
+    });
+    $(".hover6").mouseout(() => {
+      $(".hover6").removeClass("active");
+    });
   };
   hoverFunction();
   // GET request to figure out which user is logged in
