@@ -148,7 +148,6 @@ $(document).ready(() => {
       }).then(moreResponse => {
         // ON click the movie will be shown
         console.log(moreResponse);
-        // const moreData = moreResponse;
         //   Create variables.
         const posterImage = randomMovie.poster_path;
         const title = randomMovie.title;
@@ -158,7 +157,6 @@ $(document).ready(() => {
         // const genre = moreResponse.genres.name;
         const release = randomMovie.release_date;
         console.log(runTime, "run time of movie");
-        // eslint-disable-next-line prettier/prettier
         const genreNames = [];
         for (let i = 0; i < moreResponse.genres.length; i++) {
           genreNames.push(moreResponse.genres[i].name);
@@ -181,9 +179,7 @@ $(document).ready(() => {
         $(".description").text(synopsis);
         //   Show release date
         $(".release").text(release);
-        //   Show TV rating
-        // $(".rating").text(rating);
-        // //   Show Run Time
+        //   Show Run Time
         $(".runTime").text(runTime + " minutes");
         //   Show Genres
         const newHTML = [];
