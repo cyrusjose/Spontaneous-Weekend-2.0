@@ -1,5 +1,5 @@
 // Html variables
-var resultContainer = $(".resultContainer");
+var resultContainer = $(".resultsContainer");
 var cityName = $("#cityName");
 var randomBtn = $(".random-btn");
 var nameRes = $(".restaurantName");
@@ -8,8 +8,9 @@ var cuisine = $(".cuisine");
 var price = $(".price");
 var address = $(".address");
 var callBtn = $(".callBtn");
-var webBtn = $(".webBtn");
-var resImg = $(".imgDiv");
+var webBtn = $(".webLink");
+var imgDiv = $(".imgDiv");
+var load = $(".load");
 
 // Api variables
 var apikey = "d0db9928cbmshf912bd146991184p1e2686jsn614886281a85";
@@ -21,6 +22,7 @@ var i = 0;
 $(document).ready(function(){
     //Hide result container
     resultContainer.hide();
+    load.hide();
 
     $(".sidenav").sidenav();
     const hoverFunction = () => {
@@ -54,6 +56,9 @@ $(document).ready(function(){
     randomBtn.click(function(){
         //Save user input city name
         var city = cityName.val();
+
+        //display loading
+        load.show();
 
 
         //Settings for restaurant ajax call #1: location id
@@ -109,40 +114,38 @@ $(document).ready(function(){
             var resPrice = response2.results.data[i].price;
             var resAddress = response2.results.data[i].address;
             var resImg = response2.results.data[i].photo.images.medium.url;
-            var resDes = response2.results.data[i].photo.caption;
             var resPhone = response2.results.data[i].phone;
-            var resWeb = response2.results.data[i].website;
-            
-
-            // Console logging all restaurant info
-            console.log(resName);
-            console.log(resCuisine);
-            console.log(resPrice);
-            console.log(resAddress);
-            console.log(resImg);
-            console.log(resPhone);
-            console.log(resWeb);
-
+            var resWeb = response2.results.data[i].website;         
 
             // Append restaurant info onto html
-            // name.text("Restaurant Name: " + resName);
             nameRes.text(resName);
             cuisine.text("Cuisine: " + resCuisine);
             price.text("Price: " + resPrice);
             address.text("Adress: " + resAddress);
-            callBtn.text(resPhone);
-            webBtn.text(resWeb);
 
+            // Appending restaurant images
+            const image = $("<img>").attr("src", resImg);
+            image.attr("class", "food-img");
+            imgDiv.empty().append(image);
 
+            // Linking restaurant webpage
+            webBtn.attr("href", resWeb);
+            webBtn.attr("target", "_blank");
+
+            // Link restaurant phone number function
+            
+
+            });
+          
             // Show results for restaurant info after its been generated
             resultContainer.show();
-            
+            load.hide();
+          
         });
         });
     });
 
 
-});
 
 
 
