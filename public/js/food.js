@@ -71,7 +71,7 @@ $(document).ready(() => {
 
     //display loading
     load.show();
-
+    resultContainer.hide();
     //Settings for restaurant ajax call #1: location id
     const settings1 = {
       async: true,
