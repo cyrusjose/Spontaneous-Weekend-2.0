@@ -18,8 +18,9 @@
 .restaurant-name,
 .restaurant-address,
 .restaurant-cuisine,
-.restaurant-price {
-  color: #c5d7d9;
+.restaurant-price,
+.cityForm {
+  color: black;
 }
 
 main {
@@ -31,9 +32,23 @@ main {
   background-size: cover;
 }
 .apiContent{
-  background-color: #c5d7d9 ;
-  width: 50%;
+  margin-top: 40px;
+  display: flex;
   justify-content: center;
+  
+}
+.content {
+  /* display: flex; */
+  /* flex-wrap: wrap;
+  justify-self: center;
+  justify-items: center; */
+  padding: 10px;
+  width: 50%;
+  text-align: center;
+  background-color: #7dbbb9;
+  border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: 0 0 50px;
 }
 
 h4 {
