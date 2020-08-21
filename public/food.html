@@ -58,11 +58,6 @@
             ></a>
           </li>
           <li>
-            <a class="hover4" href="./park.html"
-              >Do <i class="fa fa-bicycle" aria-hidden="true"></i
-            ></a>
-          </li>
-          <li>
             <a class="hover5" href="./favorites.html"
               >Favorites <i class="fa fa-heart" aria-hidden="true"></i
             ></a>
@@ -111,15 +106,12 @@
     <!-- End navbar -->
 
     <main>
+      <div class="apiContent">
       <div class="container search-container">
         <div class="row">
           <div class="col s12">
 
             <h3 class="inquisition">Find a Restaurant...</h3>
-            <!-- <button class="random-btn"><a><i class="right"></i id="randomBtn-text">Random Restaurant</a></button> -->
-            <button class="random-btn" class="right" id="randomBtn-text">
-              Random Restaurant
-            </button>
 
           </div>
             <!-- have user input city name here -->
@@ -128,34 +120,30 @@
                   <input type="text" id="cityName" placeholder="Enter City Name">
               </form>
               <button class="random-btn" class="right" id="randomBtn-text">
-                Random Restaurant
+                Randomize
               </button>
             </div>
         </div>
       </div>
 
-
-
-
-
-
       <!-- container with result restaurant information -->
-      <div class="container results-container">
+      <div class="container resultsContainer">
         <div class="row">
           <div class="col s12">
             <br/>
             <div><button>favorite</button></div>
-            <div class="restaurant-name">Restaurant Name</div>
-            <div class="restaurant-cuisine">Cuisine</div>
-            <div class="restaurant-price">Price Range</div>
-            <div class="restaurant-address">Address</div>
+            <div class="restaurantName">Restaurant Name</div>
+            <div class="cuisine">Cuisine</div>
+            <div class="price">Price Range</div>
+            <div class="address">Address</div>
             <hr class="line" />
             <div class="imgDiv"></div>
-            <button class="call-btn">Call</button>
-            <button class="web-btn"><a class="webLink">Website</a></button>
+            <button class="callBtn">Call</button>
+            <button class="webBtn"><a class="webLink">Website</a></button>
           </div>
         </div>
       </div>
+    </div>
     </main>
 
     <!-- Begin footer -->
