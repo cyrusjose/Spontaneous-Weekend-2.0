@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const sequelize = require("../config/connection.js");
+const sequelize = require("../config/config.json");
 
 // Creates a "Restaurant" model that matches up with DB
 const Restaurant = sequelize.define("restaurant", {
