@@ -20,3 +20,6 @@
   border-radius: 40px;
   box-shadow: 0 0 40px black;
 }
+form.signup {
+    margin-top: 20px;
+  }
