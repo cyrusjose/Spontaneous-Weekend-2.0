@@ -23,7 +23,7 @@
   color: black;
 }
 ::placeholder{
-  color: black;
+  color: darkgray;
 }
 main {
   background-image: url("../images/IMG_0029.jpeg");
