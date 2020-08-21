@@ -3,11 +3,11 @@ const resultContainer = $(".resultsContainer");
 const cityName = $("#cityName");
 const randomBtn = $(".random-btn");
 const nameRes = $(".restaurantName");
-const description = $(".description");
+// const description = $(".description");
 const cuisine = $(".cuisine");
 const price = $(".price");
 const address = $(".address");
-const callBtn = $(".callBtn");
+// const callBtn = $(".callBtn");
 const webBtn = $(".webLink");
 const imgDiv = $(".imgDiv");
 const load = $(".load");
@@ -114,7 +114,7 @@ $(document).ready(() => {
           const resPrice = response2.results.data[i].price;
           const resAddress = response2.results.data[i].address;
           const resImg = response2.results.data[i].photo.images.medium.url;
-          const resPhone = response2.results.data[i].phone;
+          // const resPhone = response2.results.data[i].phone;
           const resWeb = response2.results.data[i].website;
 
           // Append restaurant info onto html
