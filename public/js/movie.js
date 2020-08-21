@@ -284,7 +284,7 @@ $(document).ready(() => {
                                       method: "POST",
                                       data: favMovie
 
-                                  })).then(function(data) {
+                                  }).then(function(data) {
                                   console.log(data)
                               });
                           }
