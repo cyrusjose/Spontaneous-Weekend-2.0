@@ -200,7 +200,23 @@ $(document).ready(() => {
         // };
         // $("#favorite").on("click", favMovie => {
         // send to api route
-
+        $(".favoriteButton").on("click", () => {
+          const faveMovie = {
+            title: title,
+            // date: release,
+            homepage: homepage
+          };
+          // $.ajax({
+          //   url: "/favorites",
+          //   method: "POST",
+          //   data: faveMovie
+          // }).then(data => {
+          //   console.log(data);
+          // });
+          $.post("/favorites", faveMovie).then(data => {
+            console.log(data);
+          });
+        });
         // When user clicks favorite button
         // $("#chirp-submit").on("click", function(event) {
         //   event.preventDefault();
