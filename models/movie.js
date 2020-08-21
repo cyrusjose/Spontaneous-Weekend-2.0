@@ -4,8 +4,6 @@ module.exports = function(sequelize, DataTypes) {
     release: DataTypes.STRING,
     homepage: DataTypes.STRING
   });
-
-  //
   console.log(Movie);
   return Movie;
 };

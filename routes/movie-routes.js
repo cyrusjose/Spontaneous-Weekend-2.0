@@ -38,32 +38,10 @@ module.exports = function(app) {
 
   // Movie route for saving a new Movie
   app.post("/favorites", (req, res) => {
-      console.log("Hello world");
-      res.send("Hello world");
+    console.log("Hello world");
+    res.send("Hello world");
     // db.Movie.create(req.body).then(dbMovie => {
     //   res.json(dbMovie);
     // });
   });
-
-  // DELETE route for deleting Movies
-//   app.delete("/api/Movies/:id", (req, res) => {
-//     db.Movie.destroy({
-//       where: {
-//         id: req.params.id
-//       }
-//     }).then(dbMovie => {
-//       res.json(dbMovie);
-//     });
-//   });
-
-  // PUT route for updating Movies
-//   app.put("/api/Movies", (req, res) => {
-//     db.Movie.update(req.body, {
-//       where: {
-//         id: req.body.id
-//       }
-//     }).then(dbMovie => {
-//       res.json(dbMovie);
-//     });
-//   });
-// };
+};
