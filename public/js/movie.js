@@ -202,7 +202,7 @@ $(document).ready(() => {
         // send to api route
 
         // When user clicks favorite button
-        // $("#chirp-submit").on("click", function(event) {
+        // $("#favorite").on("click", function(event) {
         //   event.preventDefault();
 
         //   // Make a newChirp object

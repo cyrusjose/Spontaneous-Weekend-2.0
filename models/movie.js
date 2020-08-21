@@ -9,7 +9,7 @@ module.exports = function(sequelize) {
 
   Movie.associate = function(models) {
     // We're saying that a movie favorite should belong to a user
-    Post.belongsTo(models.User, {
+    Movie.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }

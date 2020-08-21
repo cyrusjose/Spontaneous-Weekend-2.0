@@ -4,64 +4,64 @@ const db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
-  // GET route for getting all of the posts
-  app.get("/api/movie", function(req, res) {
-    var query = {};
-    if (req.query.author_id) {
-      query.AuthorId = req.query.author_id;
+  // GET route for getting all of the Movies
+  app.get("/api/movie", (req, res) => {
+    const query = {};
+    if (req.query.User_id) {
+      query.UserId = req.query.User_id;
     }
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Author
-    db.Post.findAll({
+    // In this case, just db.User
+    db.Movie.findAll({
       where: query,
-      include: [db.Author]
-    }).then(function(dbPost) {
-      res.json(dbPost);
+      include: [db.User]
+    }).then(dbMovie => {
+      res.json(dbMovie);
     });
   });
 
-  // Get route for retrieving a single post
-  app.get("/api/posts/:id", function(req, res) {
+  // Get route for retrieving a single Movie
+  app.get("/movie/:id", (req, res) => {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Author
-    db.Post.findOne({
+    // In this case, just db.User
+    db.Movie.findOne({
       where: {
         id: req.params.id
       },
-      include: [db.Author]
-    }).then(function(dbPost) {
-      res.json(dbPost);
+      include: [db.User]
+    }).then(dbMovie => {
+      res.json(dbMovie);
     });
   });
 
-  // POST route for saving a new post
-  app.post("/api/posts", function(req, res) {
-    db.Post.create(req.body).then(function(dbPost) {
-      res.json(dbPost);
+  // Movie route for saving a new Movie
+  app.post("/favorites", (req, res) => {
+    db.Movie.create(req.body).then(dbMovie => {
+      res.json(dbMovie);
     });
   });
 
-  // DELETE route for deleting posts
-  app.delete("/api/posts/:id", function(req, res) {
-    db.Post.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
+  // DELETE route for deleting Movies
+//   app.delete("/api/Movies/:id", (req, res) => {
+//     db.Movie.destroy({
+//       where: {
+//         id: req.params.id
+//       }
+//     }).then(dbMovie => {
+//       res.json(dbMovie);
+//     });
+//   });
 
-  // PUT route for updating posts
-  app.put("/api/posts", function(req, res) {
-    db.Post.update(req.body, {
-      where: {
-        id: req.body.id
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
-};
+  // PUT route for updating Movies
+//   app.put("/api/Movies", (req, res) => {
+//     db.Movie.update(req.body, {
+//       where: {
+//         id: req.body.id
+//       }
+//     }).then(dbMovie => {
+//       res.json(dbMovie);
+//     });
+//   });
+// };
