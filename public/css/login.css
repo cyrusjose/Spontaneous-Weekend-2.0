@@ -1,6 +1,28 @@
 @import url("style.css");
 
 
+.container {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  /* color: white; */
+}
+.container,
+.loginHead{
+    color: white;
+}
+
+.row {
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: #151c15;
+  border: 2px solid black;
+  border-radius: 40px;
+  box-shadow: 0 0 40px black;
+}
+
+
 form.signup,
 form.login {
   margin-top: 50px;
