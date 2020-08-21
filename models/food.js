@@ -1,9 +1,9 @@
 // Creates a "Restaurant" model that matches up with DB
 module.exports = function(sequelize, DataTypes) {
-  const Restaurant = sequelize.define("restaurant", {
+  const Restaurant = sequelize.define("Restaurant", {
     restaurant_name: DataTypes.STRING,
     cuisine: DataTypes.STRING,
-    price: DataTypes.NUMBER,
+    price: DataTypes.STRING,
     address: DataTypes.STRING
   });
 
