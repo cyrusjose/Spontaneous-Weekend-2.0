@@ -38,9 +38,11 @@ module.exports = function(app) {
 
   // Movie route for saving a new Movie
   app.post("/favorites", (req, res) => {
-    db.Movie.create(req.body).then(dbMovie => {
-      res.json(dbMovie);
-    });
+      console.log("Hello world");
+      res.send("Hello world");
+    // db.Movie.create(req.body).then(dbMovie => {
+    //   res.json(dbMovie);
+    // });
   });
 
   // DELETE route for deleting Movies
