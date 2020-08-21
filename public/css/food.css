@@ -10,7 +10,7 @@
   text-align: center;
 }
 
-.results-container {
+.resultsContainer {
   text-align: center;
 }
 /* Change in color so that text is easier to see */
@@ -36,7 +36,7 @@ h4 {
   font-weight: 500;
 }
 
-.restaurant-name {
+.restaurantName {
   font-size: larger;
   font-weight: bold;
   color: rgb(0, 0, 0);
@@ -52,26 +52,26 @@ h4 {
   color: black;
 }
 
-.restaurant-cuisine {
+.cuisine {
   font-weight: 600;
 }
 
-.restaurant-address {
+.address {
   font-weight: 600;
 }
 
-.restaurant-price {
+.price {
   font-weight: 600;
 }
 
-.call-btn {
+.callBtn {
   background-color: rgb(51, 153, 139);
   border-radius: 20px;
   padding: 5px;
   width: 100px;
 }
 
-.web-btn {
+.webBtn {
   background-color: rgb(51, 153, 139);
   border-radius: 20px;
   padding: 5.5px;

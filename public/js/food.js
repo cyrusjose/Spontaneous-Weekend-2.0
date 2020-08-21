@@ -1,7 +1,7 @@
 // Html variables
 var resultContainer = $(".resultContainer");
-var cityName = $(".cityName");
-var randomBtn = $(".randomizeBtn");
+var cityName = $("#cityName");
+var randomBtn = $(".random-btn");
 var nameRes = $(".restaurantName");
 var description = $(".description");
 var cuisine = $(".cuisine");
@@ -9,6 +9,7 @@ var price = $(".price");
 var address = $(".address");
 var callBtn = $(".callBtn");
 var webBtn = $(".webBtn");
+var resImg = $(".imgDiv");
 
 // Api variables
 var apikey = "d0db9928cbmshf912bd146991184p1e2686jsn614886281a85";
@@ -111,15 +112,6 @@ $(document).ready(function(){
             var resDes = response2.results.data[i].photo.caption;
             var resPhone = response2.results.data[i].phone;
             var resWeb = response2.results.data[i].website;
-
-            // Restaurant Name: response2.results.data[i].name
-            // Restaurant Cuisine: response2.results.data[i].cuisine[i]
-            // Restaurant Price: response2.results.data[i].price
-            // Restaurant Address: response2.results.data[i].address
-            // Restaurant Img: response2.results.data[i].photo.images.medium.url
-            // Restaurant Description: response2.results.data[i].photo.caption
-            // Restaurant Phone: response2.results.data[i].phone
-            // Restaurant Website: response2.results.data[i].website
             
 
             // Console logging all restaurant info
