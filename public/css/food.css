@@ -22,7 +22,9 @@
 .cityForm {
   color: black;
 }
-
+::placeholder{
+  color: black;
+}
 main {
   background-image: url("../images/IMG_0029.jpeg");
   /* height: 2000px; */
@@ -31,7 +33,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.apiContent{
+.apiContent {
   margin-top: 40px;
   display: flex;
   justify-content: center;
@@ -125,5 +127,6 @@ h4 {
   text-align: center;
   font-size: large;
   font-weight: 600;
-  color: aliceblue;
+  color: black;
+  margin: 40px;
 }
