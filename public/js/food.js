@@ -122,7 +122,6 @@ $(document).ready(() => {
           i = Math.floor(Math.random() * res);
 
           const resName = response2.results.data[i].name;
-          const resCuisine = response2.results.data[i].cuisine[i];
           const resPrice = response2.results.data[i].price;
           const resAddress = response2.results.data[i].address;
           const resImg = response2.results.data[i].photo.images.medium.url;
@@ -131,9 +130,8 @@ $(document).ready(() => {
 
           // Append restaurant info onto html
           nameRes.text(resName);
-          cuisine.text("Cuisine: " + resCuisine);
           price.text("Price: " + resPrice);
-          address.text("Adress: " + resAddress);
+          address.text("Address: " + resAddress);
 
           // Appending restaurant images
           const image = $("<img>").attr("src", resImg);
@@ -153,31 +151,3 @@ $(document).ready(() => {
       });
   });
 });
-
-//     i = Math.floor(Math.random() * restaurants);
-
-//     // display restaurant info
-//     resName.text(data2.restaurants[i].restaurant.name);
-//     resAddress.text(
-//       "Address: " + data2.restaurants[i].restaurant.location.address
-//     );
-//     resPrice.text("Price range: " + data2.restaurants[i].restaurant.price_range);
-//     resCuisine.text("Cuisine: " + data2.restaurants[i].restaurant.cuisines);
-
-//     // append restaurant img
-//     index = Math.floor(Math.random() * foodArr.length);
-//     const imgSrc = foodArr[index];
-//     const image = $("<img>").attr("src", imgSrc);
-//     image.attr("class", "food-img");
-//     imgDiv.empty().append(image);
-
-//     // display restaurant web link
-//     const link = data2.restaurants[i].restaurant.url;
-//     webLink.attr("href", link);
-//     webLink.attr("target", "_blank");
-
-//     // display restaurant phone number
-//     callBtn.click(() => {
-//       callBtn.text(data2.restaurants[i].restaurant.phone_numbers);
-//     });
-// }

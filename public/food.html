@@ -58,15 +58,9 @@
               >Eat <i class="fa fa-cutlery" aria-hidden="true"></i
             ></a>
           </li>
-          <li>
-            <a class="hover5" href="./favorites.html"
-              >Favorites <i class="fa fa-heart" aria-hidden="true"></i
-            ></a>
-          </li>
           <!-- Logout -->
           <li>
-            <a class="hover6" href="./login.html"
-              >Logout</a>
+            <a class="hover6" href="./login.html">Logout</a>
           </li>
         </ul>
       </div>
@@ -93,15 +87,9 @@
           >Do <i class="fa fa-bicycle" aria-hidden="true"></i
         ></a>
       </li>
-      <li>
-        <a class="hover5" href="./favorites.html"
-          >Favorites <i class="fa fa-heart" aria-hidden="true"></i
-        ></a>
-      </li>
       <!-- Logout -->
       <li>
-        <a class="hover6" href="./login.html"
-          >Logout</a>
+        <a class="hover6" href="./login.html">Logout</a>
       </li>
     </ul>
     <!-- End navbar -->
@@ -109,46 +97,55 @@
     <main>
       <div class="apiContent">
         <div class="content">
-      <div class="container search-container">
-        <div class="row">
-          <div class="col s12">
-
-            <h3 class="inquisition">Find a Restaurant...</h3>
-
-          </div>
-            <!-- have user input city name here -->
-            <div class="col s12">
-              <form id="form" class="cityForm">
-                  <input type="text" id="cityName" placeholder="Enter City Name">
-              </form>
-              <button class="random-btn" class="right" id="randomBtn-text">
-                Randomize
-              </button>
+          <div class="container search-container">
+            <div class="row">
+              <div class="col s12">
+                <h3 class="inquisition">Find a Restaurant...</h3>
+              </div>
+              <!-- have user input city name here -->
+              <div class="col s12">
+                <form id="form" class="cityForm">
+                  <input
+                    type="text"
+                    id="cityName"
+                    placeholder="Enter City Name"
+                  />
+                </form>
+                <button class="random-btn" class="right" id="randomBtn-text">
+                  Randomize
+                </button>
+              </div>
             </div>
-        </div>
-      </div>
+          </div>
 
-      <div class="lds-roller load"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          <div class="lds-roller load">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
 
-      <!-- container with result restaurant information -->
-      <div class="container resultsContainer">
-        <div class="row">
-          <div class="col s12">
-            <br/>
-            <div><button>favorite</button></div>
-            <div class="restaurantName">Restaurant Name</div>
-            <div class="cuisine">Cuisine</div>
-            <div class="price">Price Range</div>
-            <div class="address">Address</div>
-            <hr class="line"/>
-            <div class="imgDiv"></div>
-            <button class="callBtn">Call</button>
-            <button class="webBtn"><a class="webLink">Website</a></button>
+          <!-- container with result restaurant information -->
+          <div class="container resultsContainer">
+            <div class="row">
+              <div class="col s12">
+                <!-- <br /> -->
+                <div class="restaurantName">Restaurant Name</div>
+                <div class="price">Price Range</div>
+                <div class="address">Address</div>
+                <hr class="line" />
+                <div class="imgDiv"></div>
+                <button class="callBtn">Call</button>
+                <button class="webBtn"><a class="webLink">Website</a></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    </div>
     </main>
 
     <!-- Begin footer -->
