@@ -119,7 +119,7 @@ $(document).ready(() => {
     console.log(userGenreChoice);
     //  URL for ajax call
     const queryURL =
-      "http://api.themoviedb.org/3/discover/movie?with_genres=" +
+      "https://api.themoviedb.org/3/discover/movie?with_genres=" +
       userGenreChoice +
       "&api_key=55e5e1d7ebed7a010f996dca966df720&language=en-US";
     console.log(queryURL);
