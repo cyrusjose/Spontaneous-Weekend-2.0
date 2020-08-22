@@ -111,7 +111,7 @@ $(document).ready(() => {
           const resPrice = response2.results.data[i].price;
           const resAddress = response2.results.data[i].address;
           const resImg = response2.results.data[i].photo.images.medium.url;
-          // const resPhone = response2.results.data[i].phone;
+          const resPhone = response2.results.data[i].phone;
           const resWeb = response2.results.data[i].website;
 
           // Append restaurant info onto html
@@ -128,7 +128,15 @@ $(document).ready(() => {
           webBtn.attr("href", resWeb);
           webBtn.attr("target", "_blank");
 
+          callBtn.text("Call");
+
+
           // Link restaurant phone number function
+          callBtn.on("click", () => {
+            callBtn.text(resPhone);
+          })
+          // callBtn.attr(href, "tel:" + resPhone);
+          // <a href="tel:123-456-7890">123-456-7890</a>
         });
 
         // Show results for restaurant info after its been generated
