@@ -172,7 +172,6 @@ $(document).ready(() => {
         for (let i = 0; i < moreResponse.genres.length; i++) {
           genreNames.push(moreResponse.genres[i].name);
         }
-        console.log(genreNames, "Genre Names");
         const homepage = moreResponse.homepage;
         //   Add attribute for poster.
         $(".poster").attr(
@@ -199,37 +198,6 @@ $(document).ready(() => {
         });
         $(".genre").html(newHTML.join(""));
         $(".homepage").attr("href", homepage);
-
-        let favMovie = "";
-
-        // Favorite button
-        $("#favMovieButton").on("click", event => {
-          event.preventDefault();
-          favMovie = {
-            title: title,
-            release: release,
-            homepage: homepage,
-            userId: userId
-          };
-          console.log(favMovie, "Hello");
-          //  return;
-
-          // Constructing a newPost object to hand to the database
-          const newMovie = {
-            title: title.val().trim(),
-            release: release.val().trim(),
-            homepage: homepage.val().trim(),
-            userId: userID.val()
-          };
-
-          // Submits a new favorite and brings user to favorites page upon completion
-          function submitMovie(movie) {
-            $.post("/api/movies", movie, () => {
-              window.location.href = "/favorites";
-            });
-          }
-          submitMovie(newMovie);
-        });
       });
     });
   });
