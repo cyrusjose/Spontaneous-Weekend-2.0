@@ -130,13 +130,10 @@ $(document).ready(() => {
 
           callBtn.text("Call");
 
-
           // Link restaurant phone number function
           callBtn.on("click", () => {
             callBtn.text(resPhone);
-          })
-          // callBtn.attr(href, "tel:" + resPhone);
-          // <a href="tel:123-456-7890">123-456-7890</a>
+          });
         });
 
         // Show results for restaurant info after its been generated
