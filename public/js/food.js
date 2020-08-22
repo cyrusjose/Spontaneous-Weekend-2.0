@@ -3,11 +3,9 @@ const resultContainer = $(".resultsContainer");
 const cityName = $("#cityName");
 const randomBtn = $(".random-btn");
 const nameRes = $(".restaurantName");
-// const description = $(".description");
-const cuisine = $(".cuisine");
 const price = $(".price");
 const address = $(".address");
-// const callBtn = $(".callBtn");
+const callBtn = $(".callBtn");
 const webBtn = $(".webLink");
 const imgDiv = $(".imgDiv");
 const load = $(".load");
@@ -49,18 +47,6 @@ $(document).ready(() => {
     });
     $(".hover4").mouseout(() => {
       $(".hover4").removeClass("active");
-    });
-    $(".hover5").mouseover(() => {
-      $(".hover5").addClass("active");
-    });
-    $(".hover5").mouseout(() => {
-      $(".hover5").removeClass("active");
-    });
-    $(".hover6").mouseover(() => {
-      $(".hover6").addClass("active");
-    });
-    $(".hover6").mouseout(() => {
-      $(".hover6").removeClass("active");
     });
   };
   hoverFunction();
