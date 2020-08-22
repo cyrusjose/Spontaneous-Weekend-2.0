@@ -55,7 +55,6 @@ main {
   align-items: center;
   border-radius: 50px;
   padding: 20px;
-  /* x-offset: 0, y-offset: 0, blur: 10px, spread: 2px*/
   box-shadow: 0 0 10px 4px;
   background-color: #d8d3d0;
 }
